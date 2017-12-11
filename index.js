@@ -1,5 +1,6 @@
 
 
+
 var state = {}; // storing states 
 state.waitingReply = false;
 state.waitingAnim = false;
@@ -33,6 +34,8 @@ function getRandomInt(min, max) {
   }
 
 function reqListener () {
+    console.log('response');
+    console.log(this.responseText);
     let res = JSON.parse(this.responseText);
     let color = res.colors[randColorInd()];
     console.log(color);
@@ -53,8 +56,11 @@ reqForColor.addEventListener("load", reqListener);
 
 
 document.getElementById('btn1').onclick = function () {
-    reqForColor.open("GET", "http://www.colr.org/json/colors/random/7"); 
-    reqForColor.send();
+    //reqForColor.open("GET", "http://www.colr.org/json/colors/random/7"); 
+    reqForColor.open("POST","https://api.random.org/json-rpc/1/invoke");
+    let req = JSON.stringify({"jsonrpc":"2.0","method":"generateIntegers","params":{"apiKey":"00000000-0000-0000-0000-000000000000","n":10,"min":1,"max":16777215,"replacement":true,"base":16},"id":12830});
+    reqForColor.send(req);
+    console.log(req);
     state.waitingReply = true;
     document.getElementById('msgbox').textContent="Please, wait. Server is being queried. Button is blocked";
     document.getElementById('btn1').setAttribute('disabled','true');
