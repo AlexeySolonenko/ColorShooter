@@ -1,0 +1,28 @@
+{
+  "name": "colorshooter",
+  "version": "1.0.0",
+  "description": "Asynchronous request/response connection testing application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeySolonenko/ColorShooter.git"
+  },
+  "keywords": [
+    "color",
+    "random",
+    "post",
+    "get"
+  ],
+  "author": "Alexey Solonenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexeySolonenko/ColorShooter/issues"
+  },
+  "homepage": "https://github.com/AlexeySolonenko/ColorShooter#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
