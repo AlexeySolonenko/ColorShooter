@@ -34,19 +34,17 @@ function getRandomInt(min, max) {
   }
 
 function reqListener () {
-    console.log('response');
-    console.log(this.responseText);
     let res = JSON.parse(this.responseText);
-    let color = res.colors[randColorInd()];
+    let color = res.result.random.data[randColorInd()];
     console.log(color);
     state.waitingReply = false;
     btn1.removeAttribute('disabled');
-    msgBox.textContent="New color is: "+color.tags[0].name;
+    msgBox.textContent="New color is: "+color;
     state.step++;
     if(state.step>3) state.step = 0;
     btn1.style.top = state.pos[state.step][0]+'px';
     btn1.style.left = state.pos[state.step][1]+'px';
-    btn1.style.backgroundColor = '#'+color.hex;
+    btn1.style.backgroundColor = '#'+color;
     console.log(btn1.style.borderColor);
 }
   
