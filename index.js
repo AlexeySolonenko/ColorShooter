@@ -11,6 +11,8 @@ state.pos = [
     [150,0]
 ];
 
+
+
 // aliasize elements
 let btn1 = document.getElementById('btn1');
 let msgBox = document.getElementById('msgbox');
