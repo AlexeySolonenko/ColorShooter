@@ -1,10 +1,20 @@
-
+// curl -k https://localhost:8000/
 // LOCAL HTTP SERVER 
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-http.createServer(function (request, response) {
+
+const options = {
+    key: fs.readFileSync('./512b-rsa-example-keypair.pem'),
+    cert: fs.readFileSync('./512b-rsa-example-cert.pem')
+};
+
+
+console.log('hi');
+
+
+http.createServer( function (request, response) {
     console.log('request ', request.url);
 
     var filePath = '.' + request.url;
