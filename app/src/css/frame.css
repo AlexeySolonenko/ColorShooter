@@ -1,0 +1,22 @@
+
+/* MAIN ROUND-CORNERED FRAME */
+/* THE BALL TRAVELS INSIDE THIS FRAME */
+
+.frame {
+    visibility: hidden;
+    width:400px;
+    margin-top:45px;
+    height: 200px;
+    border: 3px black solid;
+    margin:auto;
+    border-radius:25px;
+    position:relative;
+}
+
+.frame:hover {
+    cursor: crosshair;
+}
+
+.frame:active {
+    cursor: not-allowed;
+}

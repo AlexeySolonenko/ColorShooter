@@ -1,17 +1,12 @@
 // curl -k https://localhost:8000/
 // LOCAL HTTP SERVER 
+// https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework
+// SIMPLE BUILT-IN HTTP SERVER OF NODE
+// USED INSTEAD OF WEIGHTIER OPTIONS OF EXPRESS, STATIC, ETC.
+
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
-
-
-const options = {
-    key: fs.readFileSync('./512b-rsa-example-keypair.pem'),
-    cert: fs.readFileSync('./512b-rsa-example-cert.pem')
-};
-
-
-console.log('hi');
 
 
 http.createServer( function (request, response) {
@@ -19,7 +14,7 @@ http.createServer( function (request, response) {
 
     var filePath = '.' + request.url;
     if (filePath == './') {
-        filePath = './index.html';
+        filePath = './index.min.html';
     }
 
     var extname = String(path.extname(filePath)).toLowerCase();
@@ -65,22 +60,3 @@ http.createServer( function (request, response) {
 
 }).listen(process.env.PORT||8125);
 console.log('Server running at http://127.0.0.1:8125/');
-
-// var http = require('http');
-/* var fs = require('fs');
-
-const PORT=8080; 
-
-fs.readFile('./index.html', function (err, html) {
-
-    if (err) throw err;
-    //let htmlString = html.replace(/ /g,",");    
-    console.log(html.toString());
-    
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(PORT);
-});
-*/

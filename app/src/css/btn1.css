@@ -1,0 +1,39 @@
+/* SINCE BALL IS BUTTON, THEN ITS STYLES AND VARS ARE DESCRIBED
+WITH BTN LABEL/ALIAS - TO REFER TO ITS DOM ELEMENT ORIGIN */
+
+.btn1 {
+
+    visibility: hidden;
+    position: absolute;
+    top:150px;
+    border-radius:50%;
+    background-color:aqua;
+    height:50px;
+    width:50px;
+    border: 0px white solid;
+
+    transition-property: left, top;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    -webkit-transition-property: left, top;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: linear;
+
+    background-image: -moz-radial-gradient(15px 25px 45deg, circle cover, yellow 0%, white 100%, aqua 95%);
+	background-image: -webkit-radial-gradient(15px 25px, circle cover, white, aqua);
+	background-image: radial-gradient(15px 25px 45deg, circle cover, yellow 0%, white 100%, aqua 95%);
+	
+	animation-name: spin; 
+	animation-duration: 3s; /* 3 seconds */
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+
+}
+
+.btn1:hover {
+    cursor: pointer;
+}
+
+.btn1:active {
+    cursor: grabbing;
+}

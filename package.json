@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "dev" : "nodemon server.js",
-    "start" : "node server.js"
+    "dev":"concurrently \"nodemon server.js\" \"grunt watch:dev\"",
+    "start": "node server.js",
+    "prod":"concurrently \"nodemon server.js\" \"grunt watch:prod\""
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,21 @@
   },
   "homepage": "https://github.com/AlexeySolonenko/ColorShooter#readme",
   "devDependencies": {
+    "concurrently": "^3.5.1",
     "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
     "nodemon": "^1.12.5"
   },
-  "engines" : {
-    "npm" : "5.5.1",
-    "node" : "8.7.0" 
+  "engines": {
+    "npm": "5.5.1",
+    "node": "8.7.0"
   }
 }
